@@ -1,0 +1,41 @@
+{
+  "name": "ckeditor-story-forms",
+  "version": "0.0.1",
+  "description": "Story forms of various types for CKEditor5",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "ckeditor",
+    "story",
+    "plugin"
+  ],
+  "author": "teotsi",
+  "license": "MIT",
+  "dependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^18.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^13.0.1",
+    "@ckeditor/ckeditor5-editor-classic": "^18.0.0",
+    "@ckeditor/ckeditor5-essentials": "^18.0.0",
+    "@ckeditor/ckeditor5-heading": "^18.0.0",
+    "@ckeditor/ckeditor5-list": "^18.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^18.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "^18.0.0",
+    "@ckeditor/ckeditor5-widget": "^18.0.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^3.1.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
+  },
+  "files": [
+    "story-form",
+    "theme"
+  ]
+}

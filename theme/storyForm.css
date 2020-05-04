@@ -1,0 +1,23 @@
+.story-form p {
+    margin: 0;
+     padding-top: 0;
+     padding-left: 56px;
+     padding-right: 16px;
+     line-height: 25px;
+     letter-spacing: 1px;
+     word-spacing: 5px;
+     /* margin-bottom: 1px; */
+ }
+ .story-form {
+     margin: 20px auto;
+     padding-top: 40px;
+     padding-bottom: 40px;
+     background-color: white;
+     box-shadow: 0px 0px 5px 0px #888;
+ }
+
+ 
+ .email-subject, .email-body, .email-sender, .email-recipient {
+     margin: 0;
+     border-bottom:1px solid black!important;
+ }

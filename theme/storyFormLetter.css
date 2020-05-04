@@ -1,0 +1,12 @@
+.story-form-paper{
+    background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+
+}
+
+.letter-title, .letter-body{
+    padding: 6px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.letter-title p{
+    font-family: 'Courier New', Courier, monospace;
+}
