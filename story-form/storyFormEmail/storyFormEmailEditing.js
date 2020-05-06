@@ -1,5 +1,5 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import { toWidgetEditable } from '@ckeditor/ckeditor5-widget/src/utils';
+import { toWidgetEditable, toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
 import StoryFormEditing from '../storyFormEditing';
 
 export default class StoryFormEmailEditing extends Plugin {
@@ -16,19 +16,12 @@ export default class StoryFormEmailEditing extends Plugin {
 
     _defineSchema() {
         const schema = this.editor.model.schema;
-        
-        schema.register( 'storyFormMaterial',{
-            isLimit: true,
-            allowIn: 'storyForm',
-            allowContentOf: '$root'
-        });
 
-        
         schema.register( 'emailSender', {
             // Cannot be split or left by the caret.
             isLimit: true,
 
-            allowIn: 'storyFormMaterial',
+            allowIn: 'storyForm',
 
             // Allow content which is allowed in blocks (i.e. text with attributes).
             allowContentOf: '$block'
@@ -38,7 +31,7 @@ export default class StoryFormEmailEditing extends Plugin {
             // Cannot be split or left by the caret.
             isLimit: true,
 
-            allowIn: 'storyFormMaterial',
+            allowIn: 'storyForm',
 
             // Allow content which is allowed in blocks (i.e. text with attributes).
             allowContentOf: '$block'
@@ -49,7 +42,7 @@ export default class StoryFormEmailEditing extends Plugin {
             // Cannot be split or left by the caret.
             isLimit: true,
 
-            allowIn: 'storyFormMaterial',
+            allowIn: 'storyForm',
 
             // Allow content which is allowed in blocks (i.e. text with attributes).
             allowContentOf: '$block'
@@ -59,7 +52,7 @@ export default class StoryFormEmailEditing extends Plugin {
             // Cannot be split or left by the caret.
             isLimit: true,
 
-            allowIn: 'storyFormMaterial',
+            allowIn: 'storyForm',
 
             // Allow content which is allowed in the root (e.g. paragraphs).
             allowContentOf: '$root'
@@ -68,6 +61,7 @@ export default class StoryFormEmailEditing extends Plugin {
     }
 
     _defineConverters() {
+        const conversion = this.editor.conversion;
 
         conversion.for('upcast').elementToElement( {
             model: 'emailSender',
@@ -121,7 +115,7 @@ export default class StoryFormEmailEditing extends Plugin {
         conversion.for('upcast').elementToElement( {
             model: 'emailSubject',
             view: {
-                name: 'p',
+                name: 'h3',
                 classes: 'email-subject'
             }
         } );
@@ -129,7 +123,7 @@ export default class StoryFormEmailEditing extends Plugin {
         conversion.for('dataDowncast').elementToElement( {
             model: 'emailSubject',
             view: {
-                name: 'p',
+                name: 'h3',
                 classes: 'email-subject'
             }
         } );
@@ -137,8 +131,8 @@ export default class StoryFormEmailEditing extends Plugin {
         conversion.for('editingDowncast').elementToElement({
             model: 'emailSubject',
             view: (modelElement, viewWriter) => {
-                const p = viewWriter.createEditableElement('p',{ class:'email-subject'});
-                return toWidgetEditable( p, viewWriter );
+                const h3 = viewWriter.createEditableElement('h3',{ class:'email-subject'});
+                return toWidgetEditable( h3, viewWriter );
             }
         });
 

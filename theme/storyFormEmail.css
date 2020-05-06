@@ -1,0 +1,12 @@
+.email-subject, .email-sender, .email-recipient {
+    margin: 0;
+    border-bottom:1px solid rgb(189, 189, 189)!important;
+}
+
+.email-subject{
+    padding-left: 56px;
+}
+
+.email-body{
+    padding: 25px 0; 
+}

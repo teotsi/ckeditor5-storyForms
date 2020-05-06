@@ -1,0 +1,39 @@
+.email-navbar{
+    padding-left: 56px;
+    display: flex;
+}
+
+.email-navbar > div{
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+
+.email-bold-button{
+    background-image: url('theme/icons/bold.svg');
+}
+
+.email-italic-button{
+    background-image: url('theme/icons/italic.svg');
+}
+
+.email-link-button{
+    background-image: url('theme/icons/link.svg');
+}
+
+.email-hr-button{
+    background-image: url('theme/icons/hr.svg');
+}
+.email-strike-button{
+    background-image: url('theme/icons/strike.svg');
+}
+.email-attachment-button{
+    background-image: url('theme/icons/attachment.svg');
+}
+.email-undo-button{
+    background-image: url('theme/icons/undo.svg');
+    margin-left: 10px;
+}
+.email-redo-button{
+    background-image: url('theme/icons/redo.svg');
+}

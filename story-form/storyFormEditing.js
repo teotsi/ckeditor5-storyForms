@@ -25,7 +25,7 @@ export default class StoryFormEditing extends Plugin {
         const schema = this.editor.model.schema;
 
         schema.register( 'storyForm', {
-            // Behaves like a self-contained object (e.g. an image).
+            // Behaves like a self-contained object (e.g. an image) .
             isObject: true,
 
             // Allow in places where other blocks are allowed (e.g. directly in the root).

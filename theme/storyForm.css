@@ -9,15 +9,13 @@
      /* margin-bottom: 1px; */
  }
  .story-form {
+     width: 60%;
      margin: 20px auto;
-     padding-top: 40px;
-     padding-bottom: 40px;
+     padding-top: 10px;
+     padding-bottom: 10px;
      background-color: white;
      box-shadow: 0px 0px 5px 0px #888;
  }
 
  
- .email-subject, .email-body, .email-sender, .email-recipient {
-     margin: 0;
-     border-bottom:1px solid black!important;
- }
+ 
