@@ -54,39 +54,39 @@
 }
 
 .email-bold-button{
-    background-image: url('theme/icons/bold.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Font_Awesome_5_solid_bold.svg');
 }
 
 .email-italic-button{
-    background-image: url('theme/icons/italic.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Italic_font_awesome.svg');
 }
 
 .email-link-button{
-    background-image: url('theme/icons/link.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Font_Awesome_5_solid_link.svg');
 }
 
 .email-hr-button{
-    background-image: url('theme/icons/hr.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b3/Font_Awesome_5_solid_grip-vertical.svg');
 }
 .email-strike-button{
-    background-image: url('theme/icons/strike.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7a/Font_Awesome_5_solid_strikethrough.svg');
 }
 .email-attachment-button{
-    background-image: url('theme/icons/attachment.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Paper_clip_font_awesome.svg');
 }
 .email-undo-button{
-    background-image: url('theme/icons/undo.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0d/Undo_font_awesome.svg');
     margin-left: 10px;
 }
 .email-redo-button{
-    background-image: url('theme/icons/redo.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Font_Awesome_5_solid_redo.svg');
 }
 .email-send-button{
-    background-image: url('theme/icons/send.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/74/Envelope_alt_font_awesome.svg');
 }
 .email-forward-button{
-    background-image: url('theme/icons/forward.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Font_Awesome_5_solid_share.svg');
 }
 .email-trash-button{
-    background-image: url('theme/icons/trash.svg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Font_Awesome_5_solid_trash-alt.svg');
 }
