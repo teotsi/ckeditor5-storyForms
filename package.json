@@ -15,6 +15,7 @@
   ],
   "author": "teotsi",
   "license": "MIT",
+  "repository": "https://github.com/teotsi/ckeditor-story-forms",
   "dependencies": {
     "@ckeditor/ckeditor5-basic-styles": "^18.0.0",
     "@ckeditor/ckeditor5-dev-utils": "^13.0.1",
