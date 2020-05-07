@@ -21,11 +21,11 @@ export default class StoryFormCommand extends Command {
 function createStoryForm( writer, type ) {
     const storyForm = writer.createElement( 'storyForm' );
     
-    if(type === 'email'){
-       const emailSender = writer.createElement( 'emailSender' );
+    if( type.toLowerCase() === 'send email' ){
+       const emailSender = writer.createElement( 'emailParticipant' );
        writer.appendText("From: ", emailSender);
 
-       const emailRecipient = writer.createElement( 'emailRecipient' );
+       const emailRecipient = writer.createElement( 'emailParticipant' );
        writer.appendText("To: ", emailRecipient);
        
        const emailSubject = writer.createElement( 'emailSubject' );
@@ -42,8 +42,29 @@ function createStoryForm( writer, type ) {
        // There must be at least one paragraph for the description to be editable.
         // See https://github.com/ckeditor/ckeditor5/issues/1464.
         writer.appendElement("paragraph",emailBody);
+        
+        writer.append(createNavbar(writer,['Send'],true), storyForm);
 
-    }else if(type === 'letter'){
+    }else if(type.toLowerCase() === 'read email') {
+        const emailSender = writer.createElement( 'emailParticipant' );
+        writer.appendText("From: ", emailSender);
+ 
+        const emailRecipient = writer.createElement( 'emailParticipant' );
+        writer.appendText("To: ", emailRecipient);
+        
+        const emailSubject = writer.createElement( 'emailSubject' );
+        writer.appendText("Subject: ", emailSubject);
+ 
+        writer.append(emailSender, storyForm);
+        writer.append(emailRecipient, storyForm);
+        writer.append(emailSubject, storyForm);
+        const emailBody = writer.createElement('emailBody');
+        writer.append(emailBody, storyForm);
+        writer.appendElement("paragraph",emailBody);
+
+        writer.append(createNavbar(writer,['Reply','Replya'],true), storyForm);
+
+    }else if(type.toLowerCase() === 'letter'){
         const storyFormPaper = writer.createElement('storyFormPaper');
         const letterBody = writer.createElement( 'letterBody' );
         writer.append(storyFormPaper, storyForm);

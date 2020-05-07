@@ -12,7 +12,7 @@ export default class StoryFormUI extends Plugin {
 
         const editor = this.editor;
         const t = editor.t;
-        const formTypes = [ 'letter','email' ];
+        const formTypes = [ 'Letter','Send email', 'Read email' ];
 
         editor.ui.componentFactory.add( 'storyForm', locale =>{
             const dropdownView = createDropdown( locale );

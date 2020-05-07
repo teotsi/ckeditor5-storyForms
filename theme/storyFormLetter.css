@@ -1,10 +1,25 @@
+.story-form-paper p,
+.story-form-paper h1,
+.story-form-paper h2,
+.story-form-paper h3,
+.story-form-paper h4 {
+    margin: 0;
+     padding-top: 0;
+     padding-left: 56px;
+     padding-right: 16px;
+     line-height: 25px;
+     letter-spacing: 1px;
+     word-spacing: 5px;
+     /* margin-bottom: 1px; */
+ }
+
 .story-form-paper{
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 
 }
 
 .letter-title, .letter-body{
-    padding: 6px;
+    padding: 5px;
     font-family: 'Courier New', Courier, monospace;
 }
 .letter-title p{

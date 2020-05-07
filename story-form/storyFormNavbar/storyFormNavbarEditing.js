@@ -15,7 +15,7 @@ export default class StoryFormNavbarEditing extends Plugin {
     }
 
     _defineSchema() {
-        const buttonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo'];
+        const buttonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send'];
         const schema = this.editor.model.schema;
 
         schema.register( 'emailNavbar',{
@@ -23,11 +23,17 @@ export default class StoryFormNavbarEditing extends Plugin {
             allowIn: 'storyForm',
             allowContentOf: '$root'
         });
+        
+        schema.register( 'emailButtonContainer',{
+            isLimit: true, 
+            allowIn: 'emailNavbar',
+            allowContentOf: '$root'
+        });
 
         for (const buttonName of buttonNames){
             schema.register( `email${buttonName}Button`,{
                 isLimit:true,
-                allowIn: 'emailNavbar',
+                allowIn: ['emailNavbar', 'emailButtonContainer'],
                 allowContentOf: '$block'
             });
         }
@@ -37,7 +43,7 @@ export default class StoryFormNavbarEditing extends Plugin {
     }
 
     _defineConverters() {
-        const buttonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo'];
+        const editButtonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send'];
         const conversion = this.editor.conversion;
 
         conversion.for('upcast').elementToElement( {
@@ -61,9 +67,33 @@ export default class StoryFormNavbarEditing extends Plugin {
                 const navbar = viewWriter.createContainerElement('div',{ class:'email-navbar'});
                 return toWidget( navbar, viewWriter );
             }
+        }); 
+        
+        conversion.for('upcast').elementToElement( {
+            model:'emailButtonContainer',
+            view: {
+                name: 'div',
+                classes: 'email-button-container'
+            }
+        });
+        conversion.for('dataDowncast').elementToElement( {
+            model:'emailButtonContainer',
+            view: {
+                name: 'div',
+                classes: 'email-button-container'
+            }
         });
 
-        for (const buttonName of buttonNames){
+        conversion.for('editingDowncast').elementToElement({
+            model: 'emailButtonContainer',
+            view: (modelElement, viewWriter) => {
+                const buttonContainer = viewWriter.createContainerElement('div',{ class:'email-button-container'});
+                return toWidget( buttonContainer, viewWriter );
+            }
+        });
+
+
+        for (const buttonName of editButtonNames){ // email navbar items
             conversion.for('upcast').elementToElement( {
                 model:`email${buttonName}Button`,
                 view: {

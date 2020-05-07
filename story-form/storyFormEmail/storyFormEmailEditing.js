@@ -17,7 +17,7 @@ export default class StoryFormEmailEditing extends Plugin {
     _defineSchema() {
         const schema = this.editor.model.schema;
 
-        schema.register( 'emailSender', {
+        schema.register( 'emailParticipant', {
             // Cannot be split or left by the caret.
             isLimit: true,
 
@@ -26,17 +26,6 @@ export default class StoryFormEmailEditing extends Plugin {
             // Allow content which is allowed in blocks (i.e. text with attributes).
             allowContentOf: '$block'
         } );
-
-        schema.register( 'emailRecipient', {
-            // Cannot be split or left by the caret.
-            isLimit: true,
-
-            allowIn: 'storyForm',
-
-            // Allow content which is allowed in blocks (i.e. text with attributes).
-            allowContentOf: '$block'
-        } );
-
       
         schema.register( 'emailSubject', {
             // Cannot be split or left by the caret.
@@ -64,50 +53,25 @@ export default class StoryFormEmailEditing extends Plugin {
         const conversion = this.editor.conversion;
 
         conversion.for('upcast').elementToElement( {
-            model: 'emailSender',
+            model: 'emailParticipant',
             view: {
                 name: 'p',
-                classes: 'email-sender'
+                classes: 'email-participant'
             }
         } );
 
         conversion.for('dataDowncast').elementToElement( {
-            model: 'emailSender',
+            model: 'emailParticipant',
             view: {
                 name: 'p',
-                classes: 'email-sender'
+                classes: 'email-participant'
             }
         } );
 
         conversion.for('editingDowncast').elementToElement({
-            model: 'emailSender',
+            model: 'emailParticipant',
             view: (modelElement, viewWriter) => {
-                const p = viewWriter.createEditableElement('p',{ class:'email-sender'});
-                return toWidgetEditable( p, viewWriter );
-            }
-        });
-
-
-        conversion.for('upcast').elementToElement( {
-            model: 'emailRecipient',
-            view: {
-                name: 'p',
-                classes: 'email-recipient'
-            }
-        } );
-
-        conversion.for('dataDowncast').elementToElement( {
-            model: 'emailRecipient',
-            view: {
-                name: 'p',
-                classes: 'email-recipient'
-            }
-        } );
-
-        conversion.for('editingDowncast').elementToElement({
-            model: 'emailRecipient',
-            view: (modelElement, viewWriter) => {
-                const p = viewWriter.createEditableElement('p',{ class:'email-recipient'});
+                const p = viewWriter.createEditableElement('p',{ class:'email-participant'});
                 return toWidgetEditable( p, viewWriter );
             }
         });
