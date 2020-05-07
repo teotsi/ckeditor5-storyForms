@@ -1,5 +1,5 @@
 import Command from '@ckeditor/ckeditor5-core/src/command';
-import {createNavbar} from './utils';
+import {createNavbar, createEmail} from './utils';
 
 export default class StoryFormCommand extends Command {
     execute( { type }) {
@@ -22,20 +22,9 @@ function createStoryForm( writer, type ) {
     const storyForm = writer.createElement( 'storyForm' );
     
     if( type.toLowerCase() === 'send email' ){
-       const emailSender = writer.createElement( 'emailParticipant' );
-       writer.appendText("From: ", emailSender);
+       createEmail(writer, storyForm);
 
-       const emailRecipient = writer.createElement( 'emailParticipant' );
-       writer.appendText("To: ", emailRecipient);
-       
-       const emailSubject = writer.createElement( 'emailSubject' );
-       writer.appendText("Subject: ", emailSubject);
-
-       writer.append(emailSender, storyForm);
-       writer.append(emailRecipient, storyForm);
-       writer.append(emailSubject, storyForm);
        writer.append(createNavbar(writer), storyForm);
-
        const emailBody = writer.createElement('emailBody');
        writer.append(emailBody, storyForm);
 
@@ -43,26 +32,16 @@ function createStoryForm( writer, type ) {
         // See https://github.com/ckeditor/ckeditor5/issues/1464.
         writer.appendElement("paragraph",emailBody);
         
-        writer.append(createNavbar(writer,['Send'],true), storyForm);
+        writer.append(createNavbar(writer,['Send','Trash'],true), storyForm);
 
     }else if(type.toLowerCase() === 'read email') {
-        const emailSender = writer.createElement( 'emailParticipant' );
-        writer.appendText("From: ", emailSender);
- 
-        const emailRecipient = writer.createElement( 'emailParticipant' );
-        writer.appendText("To: ", emailRecipient);
+        createEmail(writer, storyForm);
         
-        const emailSubject = writer.createElement( 'emailSubject' );
-        writer.appendText("Subject: ", emailSubject);
- 
-        writer.append(emailSender, storyForm);
-        writer.append(emailRecipient, storyForm);
-        writer.append(emailSubject, storyForm);
         const emailBody = writer.createElement('emailBody');
         writer.append(emailBody, storyForm);
         writer.appendElement("paragraph",emailBody);
 
-        writer.append(createNavbar(writer,['Reply','Replya'],true), storyForm);
+        writer.append(createNavbar(writer,['Reply','Replya','Forward'],true), storyForm);
 
     }else if(type.toLowerCase() === 'letter'){
         const storyFormPaper = writer.createElement('storyFormPaper');

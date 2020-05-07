@@ -15,7 +15,7 @@ export default class StoryFormNavbarEditing extends Plugin {
     }
 
     _defineSchema() {
-        const buttonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send'];
+        const buttonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send', 'Forward','Trash'];
         const schema = this.editor.model.schema;
 
         schema.register( 'emailNavbar',{
@@ -43,7 +43,7 @@ export default class StoryFormNavbarEditing extends Plugin {
     }
 
     _defineConverters() {
-        const editButtonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send'];
+        const editButtonNames = ['Bold','Italic','Hr','Link','Strike','Attachment','Undo','Redo','Reply', 'Replya', 'Send','Forward','Trash'];
         const conversion = this.editor.conversion;
 
         conversion.for('upcast').elementToElement( {

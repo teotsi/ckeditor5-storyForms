@@ -84,3 +84,9 @@
 .email-send-button{
     background-image: url('theme/icons/send.svg');
 }
+.email-forward-button{
+    background-image: url('theme/icons/forward.svg');
+}
+.email-trash-button{
+    background-image: url('theme/icons/trash.svg');
+}
