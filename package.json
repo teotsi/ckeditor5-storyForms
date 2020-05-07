@@ -1,6 +1,6 @@
 {
   "name": "ckeditor-story-forms",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Story forms of various types for CKEditor5",
   "main": "index.js",
   "scripts": {
