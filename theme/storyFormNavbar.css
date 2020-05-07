@@ -15,6 +15,7 @@
     width: 15px;
     height: 15px;
     margin: 5px;
+    background-repeat: no-repeat;
 }
 
 .email-button-container{
